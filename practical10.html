@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Events</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Campus<span>Events</span></div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div>
+            <p class="hero-small">WELCOME TO</p>
+
+            <h1>College Event Management</h1>
+
+            <p class="hero-text">
+                Discover exciting college events, workshops, competitions
+                and activities happening on campus.
+            </p>
+
+            <a href="#events" class="hero-btn">Explore Events</a>
+        </div>
+    </section>
+
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+
+        <h2>Upcoming Events</h2>
+
+        <p class="section-text">
+            Find an event and register easily.
+        </p>
+
+        <!-- Search and Filter -->
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events..."
+            >
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="technical">Technical</option>
+                <option value="cultural">Cultural</option>
+                <option value="sports">Sports</option>
+                <option value="workshop">Workshop</option>
+            </select>
+
+        </div>
+
+
+        <!-- Event Cards -->
+        <div class="event-container" id="eventContainer">
+
+            <!-- Event 1 -->
+            <div class="event-card" data-category="technical">
+
+                <div class="event-icon">💻</div>
+
+                <h3>Tech Fest 2026</h3>
+
+                <p class="event-date">📅 15 October 2026</p>
+
+                <p>
+                    A technical festival featuring coding,
+                    robotics and innovation competitions.
+                </p>
+
+                <button
+                    class="register-btn"
+                    onclick="openRegistration('Tech Fest 2026')">
+                    Register
+                </button>
+
+            </div>
+
+
+            <!-- Event 2 -->
+            <div class="event-card" data-category="cultural">
+
+                <div class="event-icon">🎭</div>
+
+                <h3>Cultural Fest</h3>
+
+                <p class="event-date">📅 20 October 2026</p>
+
+                <p>
+                    Enjoy music, dance, drama and
+                    exciting cultural performances.
+                </p>
+
+                <button
+                    class="register-btn"
+                    onclick="openRegistration('Cultural Fest')">
+                    Register
+                </button>
+
+            </div>
+
+
+            <!-- Event 3 -->
+            <div class="event-card" data-category="sports">
+
+                <div class="event-icon">🏆</div>
+
+                <h3>Sports Meet</h3>
+
+                <p class="event-date">📅 25 October 2026</p>
+
+                <p>
+                    Participate in football, cricket,
+                    badminton and other sports.
+                </p>
+
+                <button
+                    class="register-btn"
+                    onclick="openRegistration('Sports Meet')">
+                    Register
+                </button>
+
+            </div>
+
+
+            <!-- Event 4 -->
+            <div class="event-card" data-category="workshop">
+
+                <div class="event-icon">🧠</div>
+
+                <h3>AI Workshop</h3>
+
+                <p class="event-date">📅 30 October 2026</p>
+
+                <p>
+                    Learn the basics of Artificial Intelligence
+                    through an interactive workshop.
+                </p>
+
+                <button
+                    class="register-btn"
+                    onclick="openRegistration('AI Workshop')">
+                    Register
+                </button>
+
+            </div>
+
+        </div>
+
+        <p id="noEvents" class="no-events">
+            No events found.
+        </p>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+
+        <h2>About Campus Events</h2>
+
+        <p>
+            Campus Events is a simple platform designed to help students
+            discover and register for college activities, competitions,
+            workshops and cultural programs.
+        </p>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: campus.events@gmail.com</p>
+        <p>Phone: +91 7972084276</p>
+
+    </section>
+
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeRegistration()">
+               
+            </span>
+
+            <h2>Event Registration</h2>
+
+            <p id="selectedEvent"></p>
+
+            <form id="registrationForm">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentBranch"
+                    placeholder="Enter your branch"
+                    required
+                >
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration
+                </button>
+
+            </form>
+
+            <p id="successMessage" class="success-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CampusEvents | College Event Management</p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
